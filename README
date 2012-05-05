@@ -1,4 +1,4 @@
-DateTimeX-Seinfeld version 0.02, released March 13, 2012
+DateTimeX-Seinfeld version 0.03, released May 5, 2012
 
 
 This module calculates the the maximum Seinfeld chain length from
@@ -30,10 +30,11 @@ DEPENDENCIES
 
 
 CHANGES
-    Here's what's new in version 0.02 of DateTimeX-Seinfeld:
+    Here's what's new in version 0.03 of DateTimeX-Seinfeld:
     (See the file "Changes" for the full revision history.)
 
-	- API change to allow find_chains to continue where it left off
+	- Minor improvements to documentation
+	- No functional changes
 
 
 

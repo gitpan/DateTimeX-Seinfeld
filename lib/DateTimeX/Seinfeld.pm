@@ -24,8 +24,8 @@ use namespace::autoclean;
 use MooseX::Types::Moose qw(CodeRef);
 use MooseX::Types::DateTime (); # Just load coercions
 
-our $VERSION = '0.02';
-# This file is part of DateTimeX-Seinfeld 0.02 (March 13, 2012)
+our $VERSION = '0.03';
+# This file is part of DateTimeX-Seinfeld 0.03 (May 5, 2012)
 
 #=====================================================================
 
@@ -160,8 +160,8 @@ DateTimeX::Seinfeld - Calculate Seinfeld chain length
 
 =head1 VERSION
 
-This document describes version 0.02 of
-DateTimeX::Seinfeld, released March 13, 2012.
+This document describes version 0.03 of
+DateTimeX::Seinfeld, released May 5, 2012.
 
 =head1 SYNOPSIS
 
@@ -207,16 +207,17 @@ counted once.
 
 =head2 start_date
 
-This is the DateTime of the beginning of the first period.  All events
-passed to C<find_chains> must be greater than or equal to this value.
+This is the DateTime (or a hashref acceptable to C<< DateTime->new >>)
+of the beginning of the first period.  All events passed to
+C<find_chains> must be greater than or equal to this value.
 (required)
 
 
 =head2 increment
 
-This is the DateTime::Duration giving the length of each period.  You
-may also pass a hashref acceptable to the DateTime::Duration
-constructor.  (required)
+This is the DateTime::Duration (or a hashref acceptable to
+C<< DateTime::Duration->new >>) giving the length of each period.
+(required)
 
 
 =head2 skip
@@ -309,10 +310,11 @@ If you are monitoring an ongoing sequence of events, it would be
 wasteful to have to start each search from the first event.  Instead,
 you can pass the hashref returned by the first search to
 C<find_chains>, along with just the new events.  The hashref you pass
-will be modifed (the same hashref will be returned).  To simplify
+will be modified (the same hashref will be returned).  To simplify
 this, it is not necessary that C<last> and C<longest> reference the
 same hash if they are the same chain.  If they have the same
-C<start_period>, then C<find_chains> will link them automatically.
+C<start_period>, then C<find_chains> will link them automatically (by
+setting S<C<< $info->{longest} = $info->{last} >>>).
 When continuing a search, the C<start_date> is ignored.  Instead, the
 search resumes from C<< $info->{last}{end_period} >>.
 
@@ -355,6 +357,15 @@ C<start_date> of the first period.
 =head1 CONFIGURATION AND ENVIRONMENT
 
 DateTimeX::Seinfeld requires no configuration files or environment variables.
+
+=head1 DEPENDENCIES
+
+DateTimeX::Seinfeld requires
+L<Moose>,
+L<namespace::autoclean>,
+L<MooseX::Types::DateTime>,
+L<MooseX::Types::Moose>,
+and Perl 5.10.0 or later.
 
 =head1 INCOMPATIBILITIES
 
