@@ -24,8 +24,8 @@ use namespace::autoclean;
 use MooseX::Types::Moose qw(CodeRef);
 use MooseX::Types::DateTime (); # Just load coercions
 
-our $VERSION = '0.03';
-# This file is part of DateTimeX-Seinfeld 0.03 (May 5, 2012)
+our $VERSION = '1.000';
+# This file is part of DateTimeX-Seinfeld 1.000 (January 11, 2014)
 
 #=====================================================================
 
@@ -160,8 +160,8 @@ DateTimeX::Seinfeld - Calculate Seinfeld chain length
 
 =head1 VERSION
 
-This document describes version 0.03 of
-DateTimeX::Seinfeld, released May 5, 2012.
+This document describes version 1.000 of
+DateTimeX::Seinfeld, released January 11, 2014.
 
 =head1 SYNOPSIS
 
@@ -385,11 +385,11 @@ or through the web interface at
 L<< http://rt.cpan.org/Public/Bug/Report.html?Queue=DateTimeX-Seinfeld >>.
 
 You can follow or contribute to DateTimeX-Seinfeld's development at
-L<< http://github.com/madsen/datetimex-seinfeld >>.
+L<< https://github.com/madsen/datetimex-seinfeld >>.
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Christopher J. Madsen.
+This software is copyright (c) 2014 by Christopher J. Madsen.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
